@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawMart</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button id="sidetoggle" class="sidetoggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1>
+                PawMart
+            </h1>
+
+        </nav>
+    </header>
+    <script>
+        const sidetoggle = document.getElementById("sidetoggle");
+
+        sidetoggle.addEventListener("click", () => {
+            sidetoggle.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        })
+    </script>
+
+    <main>
+        <div class="sidebarcontainer" id="sidebarcontainer">
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li id="current_site">
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="products.html">PRODUCTS</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <details>
+                                <summary class="contact">
+                                    CONTACTS
+                                </summary>
+                                <P>
+                                    Email: pawmart@gmail.com
+                                </P>
+                            </details>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aboutus.html">ABOUT US</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <article>
+            <h1>Welcome to PawMart</h1>
+            <p>
+                We have a wide range of products for your cat, dog, bird and fish. We offer great deal with affoardable
+                prices and good quality. Our services are available at any time and anything you order from us will be
+                delivered
+                within 48 hours.
+            </p>
+            <h2>Everything you need in one place</h2>
+            <p>Find healthy food, toys, accessories, and lovable pets for your furry, feathered, and aquatic friends
+            </p>
+            <div class="section_breaker"></div>
+            <div class="shopbuttons">
+                <a href="products.html">Shop Now</a>
+            </div>
+            <div class="section_breaker"></div>
+            <hr>
+            <div class="section_breaker"></div>
+            <h2>Why Choose PawMart?</h2>
+            <ul>
+                <li>
+                    <h3>🐾 Healthy & Happy Pets</h3>
+                    <span>Carefully selected products for your pets.</span>
+                </li>
+                <li>
+                    <h3>🚚 Fast Delivery</h3>
+                    <span>Quick and reliable shipping within 48 hours.</span>
+                </li>
+                <li>
+                    <h3>💰 Affordable Prices</h3>
+                    <span>Quality products at fair prices.</span>
+                </li>
+                <li>
+                    <h3>❤️ Pet Lovers First</h3>
+                    <span>Created by pet lovers for pet lovers.</span>
+                </li>
+            </ul>
+            <div class="section_breaker"></div>
+            <hr>
+            <div class="section_breaker"></div>
+            <div class="reviews">
+                <h2>Customer Reviews</h2>
+                <div class="review">
+                    <div class="reviewname">
+                        <h2>Sarah M</h2>
+                    </div>
+                    <hr>
+                    <div class="reviewcomment">"Amazing products and great service!"</div>
+                    <div class="reviewstar">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review">
+                    <div class="reviewname">
+                        <h2>Micheal R</h2>
+                    </div>
+                    <hr>
+                    <div class="reviewcomment">"The quality of the pet supplies exceeded my expectations. My dog
+                        absolutely loves the toys I bought from PawMart!"</div>
+                    <div class="reviewstar">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review">
+                    <div class="reviewname">
+                        <h2>Emily T</h2>
+                    </div>
+                    <hr>
+                    <div class="reviewcomment">"A great variety of products and an easy shopping experience. I found
+                        everything I needed for my cat in one place."</div>
+                    <div class="reviewstar">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+
+        </article>
+    </main>
+    <footer>
+        <p>PawMart &copy; 2026</p>
+        <h2>Demo Project for Portfolio Purposes</h2>
+        <p>Visit <a href="https://siam-tech24.github.io/Profile">Siam-Tech24</a> to learn more about me and get your
+            own commercial or personal custom website</p>
+    </footer>
+</body>
+
+</html>

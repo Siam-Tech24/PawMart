@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawMart || About Us</title>
+    <link rel="stylesheet" href="aboutus.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button id="sidetoggle" class="sidetoggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1>
+                PawMart
+            </h1>
+
+        </nav>
+    </header>
+    <script>
+        const sidetoggle = document.getElementById("sidetoggle");
+
+        sidetoggle.addEventListener("click", () => {
+            sidetoggle.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        })
+    </script>
+
+    <main>
+        <div class="sidebarcontainer" id="sidebarcontainer">
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="products.html">PRODUCTS</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <details>
+                                <summary class="contact">
+                                    CONTACTS
+                                </summary>
+                                <P>
+                                    Email: pawmart@gmail.com
+                                </P>
+                            </details>
+                        </a>
+                    </li>
+                    <li id="current_site">
+                        <a href="aboutus.html">ABOUT US</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+        <article>
+            <h1>
+                About PawMart
+            </h1>
+            <hr>
+            <p>
+
+                PawMart was founded with a simple mission:
+                to provide quality products and exceptional care
+                for pets and their owners.
+            </p>
+            <div class="section_breaker"></div>
+            <hr>
+            <div class="section_breaker"></div>
+            <h2>Our Mission: </h2>
+            <ul>
+                <li>🐾 Quality Products</li>
+                <li>❤️ Pet First Approach</li>
+                <li>🚚 Fast Delivery</li>
+                <li>💰 Affordable Prices</li>
+            </ul>
+
+            <div class="section_breaker"></div>
+            <hr>
+            <div class="section_breaker"></div>
+            <h2>What we offer: </h2>
+            <ul>
+                <li>🐶 Dog Products</li>
+                <li>🐱 Cat Products</li>
+                <li>🐦 Bird Supplies</li>
+                <li>🐠 Fish Essentials</li>
+                <li>🧸 Toys & Accessories</li>
+            </ul>
+            <div class="section_breaker"></div>
+            <hr>
+            <div class="section_breaker"></div>
+            <h2>Why pet owners choose us?</h2>
+            <ul>
+                <li>✔ Trusted Quality</li>
+                <li> ✔ Friendly Service</li>
+                <li> ✔ Wide Product Selection</li>
+                <li> ✔ Convenient Shopping</li>
+            </ul>
+            <div class="section_breaker"></div>
+            <hr>
+            <div class="section_breaker"></div>
+            <h2>
+                Ready to find the perfect products
+                for your beloved pet?
+            </h2>
+            <div class="section_breaker"></div>
+            <div class="shopbuttons">
+                <a href="products.html">Shop Now</a>
+            </div>
+            <div class="section_breaker"></div>
+
+        </article>
+    </main>
+    <footer>
+        <p>PawMart &copy; 2026</p>
+        <h2>Demo Project for Portfolio Purposes</h2>
+        <p>Visit <a href="https://siam-tech24.github.io/Profile">Siam-Tech24</a> to learn more about me and get your
+            own commercial or personal custom website</p>
+    </footer>
+
+</body>
+
+</html>

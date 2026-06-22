@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawMart || Products</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button id="sidetoggle" class="sidetoggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1>
+                PawMart
+            </h1>
+
+        </nav>
+    </header>
+    <script>
+        const sidetoggle = document.getElementById("sidetoggle");
+
+        sidetoggle.addEventListener("click", () => {
+            sidetoggle.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        })
+    </script>
+
+    <main>
+        <div class="sidebarcontainer" id="sidebarcontainer">
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="" id="current_site">PRODUCTS</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <details>
+                                <summary class="contact">
+                                    CONTACTS
+                                </summary>
+                                <P>
+                                    Email: pawmart@gmail.com
+                                </P>
+                            </details>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aboutus.html">ABOUT US</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <article id="productscontainer">
+            <div class="searchbar_container">
+                <div class="searchbar">
+                    <span>🔍</span>
+                    <input type="text" name="query" id="query" placeholder="Search Products">
+                    <button onclick="results()">Search</button>
+                </div>
+            </div>
+
+
+            <div class="product_display_container">
+                <div class="product_display"></div>
+            </div>
+
+
+        </article>
+    </main>
+    <script>
+        const products = [
+            {
+                name: "Taipet Adult Premium Cat Food Chicken And Tuna 400g",
+                price: "৳350",
+                id: 1,
+            },
+            {
+                name: "Cat treat",
+                price: "৳460",
+                id: 2,
+            },
+            {
+                name: "Bioline Cat Shampoo-250ml",
+                price: "৳890",
+                id: 3,
+            },
+            {
+                name: "Pet Claw trimmer pet cat nail cutter",
+                price: "৳450",
+                id: 4,
+            },
+            {
+                name: "PEDIGREE® Small Dog Dry Food - Roasted Chicken, Rice & Veg",
+                price: "৳430",
+                id: 5,
+            },
+            {
+                name: "Sparkbliss Lavender Calming Pet Shampoo 250ml ",
+                price: "৳680",
+                id: 6,
+            },
+            {
+                name: "Bone Ring Dog Chew Toy",
+                price: "৳250",
+                id: 7,
+            },
+            {
+                name: "Pet Nail Cutter For Cat Dog Nail Trimmer",
+                price: "৳480",
+                id: 8,
+            },
+            {
+                name: "Super Nova aquarium fish food 200g",
+                price: "৳120",
+                id: 9,
+            },
+            {
+                name: "Wall Mount Fish Tank for Betta fish",
+                price: "৳120",
+                id: 10,
+            },
+            {
+                name: "Tetra Goldfish Sticks fish food",
+                price: "৳320",
+                id: 11,
+            },
+            {
+                name: "Freeze Dried Tubifex Worms-Torrent",
+                price: "৳430",
+                id: 12,
+            },
+            {
+                name: "budgerigar bird diaper dress ",
+                price: "৳150",
+                id: 13,
+            },
+            {
+                name: "Bird Toys In Ball Shape",
+                price: "৳90",
+                id: 14,
+            },
+            {
+                name: "Bird Cages Large Size House Shaped",
+                price: "৳850",
+                id: 15,
+            },
+            {
+                name: "Bird Perch Stick Cage Accessories 10 Inches 1pcs",
+                price: "৳140",
+                id: 16,
+            },
+            {
+                name: "Mr pet cat dry food chicken, tuna turkey 3kg adult cat food",
+                price: "৳2000",
+                id: 17,
+            },
+            {
+                name: "Self-Warming Cat Bed Pad, Self Heating Pad ",
+                price: "৳1800",
+                id: 18,
+            },
+            {
+                name: "Massager for Cats",
+                price: "৳800",
+                id: 19,
+            },
+            {
+                name: "Harringtons Complete Cat Food Adult Chicken 2kg",
+                price: "৳1200",
+                id: 20,
+            },
+            {
+                name: "1Pc Cheap Candy Color Plastic Pet Double Bowls",
+                price: "৳600",
+                id: 21,
+            },
+            {
+                name: "Cat Feather Toys Cat Toys",
+                price: "৳120",
+                id: 22,
+            },
+            {
+                name: "Rustle Sound Catnip Toy Cats ",
+                price: "৳500",
+                id: 23,
+            },
+            {
+                name: "Anti Cat Scratch Tape Sofa Door Corner Cats Scratch Tape for Doors",
+                price: "৳300",
+                id: 24,
+            },
+            {
+                name: "Cat Scratching Post, Flower Cat Scratchers Trees for Indoor Cats",
+                price: "৳1300",
+                id: 25,
+            },
+        ];
+
+        const productscontainer = document.getElementById("productscontainer");
+
+
+        products.forEach((item) => {
+            const productcard = document.createElement("div");
+            productcard.innerHTML = `
+            <div class="product_pic">
+                <img src="Productpics/${item.id}.jpg">
+            </div>
+            <div class="product_details">
+                <hr>
+                <h4>${item.name}</h4>
+                <p>Price: ${item.price}</p>
+            </div>
+            <div>
+                <span>Ratings: ⭐⭐⭐⭐⭐</span>
+            </div>
+            `;
+            productcard.classList.add("productcard");
+            productcard.id = item.id;
+            productscontainer.appendChild(productcard);
+        });
+
+
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-items');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.01
+        });
+
+        const allproducts = document.querySelectorAll(".productcard");
+
+        allproducts.forEach((card) => {
+            observer.observe(card);
+        });
+
+
+        function results() {
+            const query = document.getElementById("query").value;
+            const search_results = products.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+
+            if (query !== "") {
+
+                productscontainer.innerHTML = `
+                <div class="searchbar_container">
+                    <div class="searchbar">
+                    <span>🔍</span>
+                    <input type="text" name="query" id="query" placeholder="Search Products" value="${query}">
+                    <button onclick="results()">Search</button>
+                </div>
+            </div>
+            <div class="product_display_container">
+                <div class="product_display"></div>
+            </div>
+                `;
+                search_results.forEach((item) => {
+                    const productcard = document.createElement("div");
+                    productcard.innerHTML = `
+
+                    <div class="product_pic">
+                        <img src="Productpics/${item.id}.jpg">
+                        </div>
+                        <div class="product_details">
+                            <hr>
+                            <h4>${item.name}</h4>
+                <p>Price: ${item.price}</p>
+            </div>
+            <div>
+                <span>Ratings: ⭐⭐⭐⭐⭐</span>
+            </div>
+            `;
+
+                    productcard.classList.add("productcard");
+                    productcard.id = item.id;
+                    productscontainer.appendChild(productcard);
+                });
+
+                const newproductcardsall = document.querySelectorAll(".productcard");
+
+                newproductcardsall.forEach((item) => {
+                    observer.observe(item);
+                })
+            }
+
+            else {
+
+            }
+
+        }
+
+
+        productscontainer.addEventListener("click", (event) => {
+            const card = event.target.closest(".productcard");
+            if (card) {
+                const product_display_container = document.querySelector(".product_display_container");
+                const product_display = document.querySelector(".product_display");
+                product_display_container.classList.add("active");
+
+                const current_product = products[parseInt(card.id) - 1];
+
+                product_display.innerHTML = `
+                <div class="display_image">
+                <img src="Productpics/${card.id}.jpg">
+                </div>
+                <span></span>
+                <button id="close">Close</button>
+                <div class="product_display_details">
+                    <div>
+                    <h2>${current_product.name}</h2>
+                    <h3>Price: ${current_product.price}</h3>
+                    </div>
+                    <div class="purchase_buttons">
+                    <button class="buy" id="purchase">Add to cart</button>
+                    <button class="buy" id="buy">Buy now</button>
+                    </div>
+                    <span>Ratings: ⭐⭐⭐⭐⭐</span>
+                </div>
+                `;
+
+                const close = document.getElementById("close");
+                const purchase = document.getElementById("purchase");
+                const buy = document.getElementById("buy");
+
+                close.addEventListener("click", () => {
+                    product_display_container.classList.remove("active");
+                })
+
+                purchase.addEventListener("click", () => {
+
+                    if (purchase.classList.contains("buy")) {
+                        alert("Added to Cart");
+                    }
+                    purchase.classList.remove("buy");
+                    purchase.classList.add("pressed");
+                })
+
+                buy.addEventListener("click", () => {
+
+                    if (buy.classList.contains("buy")) {
+                        alert("Product out of stock");
+                    }
+                    buy.classList.remove("buy");
+                    buy.classList.add("pressed");
+                })
+
+            }
+        })
+
+    </script>
+    <footer>
+        <p>PawMart &copy; 2026</p>
+        <h2>Demo Project for Portfolio Purposes</h2>
+        <p>Visit <a href="https://siam-tech24.github.io/Profile">Siam-Tech24</a> to learn more about me and get your
+            own commercial or personal custom website</p>
+    </footer>
+</body>
+
+</html>
