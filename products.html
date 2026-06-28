@@ -335,7 +335,12 @@
                 const buy = document.getElementById("buy");
 
                 close.addEventListener("click", () => {
-                    product_display_container.classList.remove("active");
+                    product_display_container.classList.add("product_display_container_remove");
+
+                    setTimeout(()=>{
+                        product_display_container.classList.remove("active");
+                        product_display_container.classList.remove("product_display_container_remove");
+                    }, 600);
                 })
 
                 purchase.addEventListener("click", () => {
