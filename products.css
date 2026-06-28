@@ -457,7 +457,7 @@ footer a {
     animation: product_display_outro 0.5s forwards;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
     .product_display {
         height: 80%;
         width: 80%;
